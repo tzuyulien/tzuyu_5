@@ -25,11 +25,11 @@ Get value from Bootstrap dropdown menu
 
 
 
-$('#dropdown li').on('click', function(){
+$('#dropdown li').on('click',"#1", function(){
     alert($(this).text());
  
   var weather, feed, title, content,  
-    rss = 'http://weather.yahooapis.com/forecastrss?w=2306180&u=c',  
+    rss = 'http://weather.yahooapis.com/forecastrss?w=2306179&u=c',  
     url = 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=' + encodeURIComponent(rss);  
   $.ajax({  
     type: "GET",  
@@ -45,9 +45,12 @@ $('#dropdown li').on('click', function(){
       console.log(feed);  
       title = feed.title;  
       content = feed.entries[0].content;  
-      $('h3').append(title);  
-      $('.ui-content').append(content);  }  
+      $('.btn-group#1').append(title);  
+      $('.panel-heading').append(content);  }  
 });  
+
+
+
  
   
  
