@@ -25,7 +25,7 @@ Get value from Bootstrap dropdown menu
 
 
 
-$('#dropdown li#w1').on('click', function(){
+$('#dropdown li').on('click', function(){
    /* alert($(this).text());*/
 
 
