@@ -25,9 +25,21 @@ Get value from Bootstrap dropdown menu
 
 
 
-$('#dropdown li').on('click', function(){
-    alert($(this).text());
- 
+$('#dropdown li#w1').on('click', function(){
+   /* alert($(this).text());*/
+
+
+ /*$('.dropdown-toggle').html($(this).text()+'<span class="caret"></span>');
+ var city=$(this).text();
+      $ajax('https://query.yahooapis.com/v1/public/yql',{
+        type: 'GET',
+        data: {
+          q: 'select * from weather.forecast where woeid in (select word from geo.places(1) where text="'+city+'")',
+          format:'json'
+        },*/
+      
+
+
   var weather, feed, title, content,  
     rss = 'http://weather.yahooapis.com/forecastrss?w=2306179&u=c',  
     url = 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q=' + encodeURIComponent(rss);  
@@ -37,7 +49,9 @@ $('#dropdown li').on('click', function(){
     dataType: "json",  
     error: function (e) {  
       console.log('oh no');  
-    },  
+    },  */
+
+
     success: function (e) {  
       weather = $(e);  
       feed = weather[0].responseData.feed;  
@@ -45,7 +59,7 @@ $('#dropdown li').on('click', function(){
       console.log(feed);  
       title = feed.title;  
       content = feed.entries[0].content;  
-      $('.btn-group#1').append(title);  
+      $('.btn-group').append(title);  
       $('.panel-heading').append(content);  }  
 });  
 
